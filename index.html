@@ -20,12 +20,18 @@
   <!-- https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them -->
   <script type="text/babel">
     class App extends React.Component {
+      state = {
+        name: "Test",
+        age: 30
+      }
       render() {
         return (
           <div className="app-context">
             <h1>Hello World</h1>
             //Dynamic Javascript content
             <p>{ Math.random() * 10 }</p>
+            <p>My name is: { this.state.name } </p> //Wont work if this is not used.
+            <p>My age is: { this.state.age } </p>
           </div>
         )
       }
