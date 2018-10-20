@@ -24,14 +24,25 @@
         name: "Test",
         age: 30
       }
+      handleClick(e) {
+        console.log (e.target)
+      }
+      handleMouseover(e){
+        console.log(e)
+      }
+      handleCopy(e) {
+        console.log("Cant you handle this on your own?")
+      }
       render() {
         return (
           <div className="app-context">
             <h1>Hello World</h1>
-            //Dynamic Javascript content
             <p>{ Math.random() * 10 }</p>
-            <p>My name is: { this.state.name } </p> //Wont work if this is not used.
+            <p>My name is: { this.state.name } </p>
             <p>My age is: { this.state.age } </p>
+            <button onClick={this.handleClick}>Click Me</button>
+            <button onMouseOver={this.handleMouseover}>Hover Me</button>
+            <p onCopy={this.handleCopy}>Hello</p>
           </div>
         )
       }
@@ -39,4 +50,4 @@
     ReactDOM.render(<App />,document.getElementById('app'));
   </script>
 </body>
-</html>
+</html>"
