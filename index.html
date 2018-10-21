@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Basics</title>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Core react library -->
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <!-- DOM Library -->
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+</head>
+<body>
+  <!-- Primary container -->  
+  <div id="app"></div>
+  
+  <!-- Using Javascript classes -->
+  <!-- You can return only 1 element. Also you cannot use class to add a CSS. Please use className -->
+  <!-- You need the babel js to make sure that the transpiling occurs correctly -->
+  <!-- https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them -->
+  <script type="text/babel">
+    class App extends React.Component {
+      state = {
+        name: "Test",
+        age: 30
+      }
+      handleClick(e) {
+        console.log (e.target)
+      }
+      handleMouseover(e){
+        console.log(e)
+      }
+      handleCopy(e) {
+        console.log("Cant you handle this on your own?")
+      }
+      handleChange = (e) => {
+        this.setState(
+          {
+            name: e.target.value
+          }
+        )
+      }
+
+      handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Form Submitted ",this.state.name)
+
+      }
+      render() {
+        return (
+          <div className="app-context">
+            <h1>Hello World</h1>
+            <p>{ Math.random() * 10 }</p>
+            <p>My name is: { this.state.name } </p>
+            <p>My age is: { this.state.age } </p>
+            
+            <button onMouseOver={this.handleMouseover}>Hover Me</button>
+            <p onCopy={this.handleCopy}>Hello</p>
+
+            <form onSubmit={this.handleSubmit}>
+              <input type="text" onChange={this.handleChange}/>
+              <button>Click Me</button>
+            </form>
+          </div>
+        )
+      }
+    }
+    ReactDOM.render(<App />,document.getElementById('app'));
+  </script>
+</body>
+</html>"
