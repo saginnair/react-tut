@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Ninjas extends Component {
-    render() {
+//Can be converted into a functional component
+//Functional components dont get a props passed to it. Hence it has to be passed as a parameter
+const Ninjas = (props) => {
         //console.log(this.props)
-        const {ninjas} = this.props //Destructuring
+        const {ninjas} = props //Destructuring
         const ninjaList = ninjas.map(
             ninja => {
                 return(
@@ -19,9 +20,7 @@ class Ninjas extends Component {
             <div className="ninja-list">
                 {ninjaList}
             </div>   
-            
         )
-    }
 }
 
 export default Ninjas
