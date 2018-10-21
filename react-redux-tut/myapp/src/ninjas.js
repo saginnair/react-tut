@@ -4,7 +4,7 @@ import React from 'react';
 //Functional components dont get a props passed to it. Hence it has to be passed as a parameter
 const Ninjas = (props) => {
         //console.log(this.props)
-        const {ninjas} = props //Destructuring
+        const {ninjas, deleteNinja} = props //Destructuring
         const ninjaList = ninjas.map(
             ninja => {
             // ninja => {
@@ -25,6 +25,7 @@ const Ninjas = (props) => {
                     <div>Name: {ninja.name}</div>
                     <div>Age: {ninja.age}</div>
                     <div>Belt: {ninja.belt}</div>
+                    <button onClick={() => {deleteNinja(ninja.id)}}>Delete</button>
                 </div>
             ) : null
             }
