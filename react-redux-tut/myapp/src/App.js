@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Ninjas from './ninjas';
+import AddNinja from './AddNinja'
 //import logo from './logo.svg';
 //import './App.css';
 
@@ -17,7 +18,7 @@ class App extends Component {
         <h1> My first React App </h1>
         <p> Welcome :) </p>
         <Ninjas ninjas={this.state.ninjas}/>
-        
+        <AddNinja />
       </div>
     );
   }
