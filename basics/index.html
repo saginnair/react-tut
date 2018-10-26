@@ -20,47 +20,10 @@
   <!-- https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them -->
   <script type="text/babel">
     class App extends React.Component {
-      state = {
-        name: "Test",
-        age: 30
-      }
-      handleClick(e) {
-        console.log (e.target)
-      }
-      handleMouseover(e){
-        console.log(e)
-      }
-      handleCopy(e) {
-        console.log("Cant you handle this on your own?")
-      }
-      handleChange = (e) => {
-        this.setState(
-          {
-            name: e.target.value
-          }
-        )
-      }
-
-      handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Form Submitted ",this.state.name)
-
-      }
       render() {
         return (
           <div className="app-context">
             <h1>Hello World</h1>
-            <p>{ Math.random() * 10 }</p>
-            <p>My name is: { this.state.name } </p>
-            <p>My age is: { this.state.age } </p>
-            
-            <button onMouseOver={this.handleMouseover}>Hover Me</button>
-            <p onCopy={this.handleCopy}>Hello</p>
-
-            <form onSubmit={this.handleSubmit}>
-              <input type="text" onChange={this.handleChange}/>
-              <button>Click Me</button>
-            </form>
           </div>
         )
       }
@@ -68,4 +31,4 @@
     ReactDOM.render(<App />,document.getElementById('app'));
   </script>
 </body>
-</html>"
+</html>
