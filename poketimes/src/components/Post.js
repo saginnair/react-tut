@@ -19,9 +19,9 @@ class Post extends Component {
     render() {
         const post = this.state.post ? 
             (
-                <div>
-                    <h4 className="center">{ this.state.post.title }</h4>
-                    <p>{ this.state.post.body }</p>
+                <div className="container">
+                    <h4 className="center">{this.state.post.title}</h4>
+                    <p>{this.state.post.body}</p>
                 </div>
             ) : 
             (
